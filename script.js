@@ -87,4 +87,9 @@ function displayBooks(books) {
     results.appendChild(card);
   });
 }
-//
+//function for speech
+function speak(text) {
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = "en-US";
+  speechSynthesis.speak(speech);}
+  //function load Favourites
