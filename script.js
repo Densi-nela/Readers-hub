@@ -19,7 +19,7 @@ document.getElementById("fav-btn").addEventListener("click", () => {
   favSection.classList.remove("hidden");
   loadFavorites();
 });
-
+//function to fetch books
 async function fetchBooks(query) {
   try {
     results.innerHTML = "<p>Loading...</p>";
@@ -50,11 +50,13 @@ form.addEventListener("submit", (event) => {
   fetchBooks(query); //call fetchbook function
   input.value = "";
 });
+//function to show error
 function showError(message) {
   results.innerHTML = "";
   errorDiv.textContent = message;
   errorDiv.classList.remove("hidden");
 }
+//function to display the books
 function displayBooks(books) {
   results.innerHTML = "";
 
@@ -71,10 +73,10 @@ function displayBooks(books) {
       : "";
 
     const card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("card2");
 
     card.innerHTML = `
-      <h3>${title}</h3>
+      <h5>${title}</h5>
       <p><strong>Author:</strong> ${author}</p>
       ${cover ? `<img src="${cover}" width="120">` : ""}
       <br>
@@ -85,3 +87,4 @@ function displayBooks(books) {
     results.appendChild(card);
   });
 }
+//
