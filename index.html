@@ -8,16 +8,23 @@
 
 </head>
 <body>
+    <!-- This is a header part-->
+
     <header> 
         <nav class="navbar">
+            <div class="icon">
+        <img src="remote-learning-icon.png" alt="">
          <h1> Readers Hub</h1>
+            </div>
+        
     <div>
       <button id="home-btn">Home</button>
       <button id="fav-btn">Favorites</button>
-    </div>   
-
-        </nav>
+       <button id="read-btn">Read</buttoon> 
     </header>
+    <!-- This is a home section -->
+
+    
     <section id="home-section">
     <h1>Discover your next great read </h1>
     <p>search millions of books listen to descriptions and build </p>
@@ -82,8 +89,29 @@
     <h4>pacbrojohns</h4>
     <p>2025</p>
   </div>
+<!--favorite section-->
 
-        
+
     </section>
+    <section id="fav-section" class="hidden">
+    <h2> Your Favorites</h2>
+    <div id="favorites"></div>
+  </section>
+<div id="read-section" class="hidden">
+
+  
+
+  <div id="read-content">
+   <img id="read-img">
+    <h2 id="read-title"></h2>
+    <p id="read-author"></p>
+
+    
+  </div>
+
+</div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,163 @@
+#  Novel Hub
+
+A modern Netflix-style Single Page Application (SPA) for discovering, saving, and exploring books using the Open Library API.
+
+---
+
+##  Overview
+
+Novel Hub is a frontend web application that allows users to:
+
+*  Search for books in real time
+*  View detailed book information
+*  Save favorite books
+*  Explore books in a Netflix-style layout
+*  Listen to book titles using text-to-speech
+*
+
+---
+
+## Purpose
+
+This app is designed to help users:
+
+> Discover new books, organize their reading list, and explore book details — all in a smooth, interactive interface.
+
+---
+
+## Features
+
+### Book Search
+
+* Fetches data from Open Library API
+* Displays title, author, and cover
+
+###  Featured Banner
+
+* Highlights a selected book
+* Dynamic background and actions
+
+###  Favorites Section
+
+* Save books to localStorage
+* View your personal library
+* Persistent across sessions
+
+### Read Section (SPA View)
+
+* Displays selected book details
+* Includes title, author, and cover
+
+
+###  Text-to-Speech
+
+* Listen to book titles
+
+
+###  Responsive Design
+
+* Works across different screen sizes
+
+---
+
+##  How It Works (SPA Architecture)
+
+This project follows a Single Page Application approach:
+
+* No page reloads
+* Sections are toggled using JavaScript
+* Views include:
+
+  * Home
+  * Favorites
+  * Read
+
+---
+
+## Technologies Used
+
+* HTML5
+* CSS3
+* JavaScript (Vanilla JS)
+* Open Library API
+
+---
+
+##  API Used
+
+### Open Library API
+
+Provides book data including:
+
+* Titles
+* Authors
+* Covers
+* Book identifiers
+
+---
+
+##  Project Structure
+
+```
+ project-folder
+│── index.html
+│── style.css
+│── script.js
+│── images/
+│    └── no-image.png
+```
+
+---
+
+##  How to Run
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/novel-hub.git
+```
+
+2. Open the project folder:
+
+```bash
+cd novel-hub
+```
+
+3. Open `index.html` in your browser
+
+---
+
+##  Future Improvements
+
+*  Full book reading integration (Gutenberg API)
+*  Personalized recommendations
+*  Reading progress tracking
+*  User authentication
+* Deployment (GitHub Pages / Netlify)
+
+---
+
+##  Notes
+
+* This app does **not host full book content**
+* External reading is handled via Open Library links
+* Some books may not have cover images
+
+---
+
+##  Author
+
+**Densinela Chepngetich**
+
+---
+
+## Acknowledgements
+
+* Open Library API for free book data
+* Inspiration from Netflix UI design
+
+---
+
+##  Status
+
+ In active development — continuously improving features and UI

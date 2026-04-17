@@ -1,4 +1,4 @@
-// DOM
+//selecting elements to manipulate
 const form = document.getElementById("search-form");
 const input = document.getElementById("search-input");
 const results = document.getElementById("results");
@@ -6,12 +6,13 @@ const errorDiv = document.getElementById("error");
 
 const homeSection = document.getElementById("home-section");
 const favSection = document.getElementById("fav-section");
-
-// NAV
+const readSection = document.getElementById("read-section");
+//navigation bar
 document.getElementById("home-btn").onclick = () => {
   homeSection.classList.remove("hidden");
   favSection.classList.add("hidden");
 };
+
 
 document.getElementById("fav-btn").onclick = () => {
   homeSection.classList.add("hidden");
@@ -19,7 +20,14 @@ document.getElementById("fav-btn").onclick = () => {
   loadFavorites();
 };
 
-// SEARCH
+document.getElementById("read-btn").addEventListener("click", () => {
+  homeSection.classList.add("hidden");
+  favSection.classList.add("hidden");
+  readSection.classList.remove("hidden");
+});
+
+
+//adding event listener to the form
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -30,7 +38,7 @@ form.addEventListener("submit", (e) => {
   input.value = "";
 });
 
-// FETCH BOOKS
+//function to fetch data from API
 async function fetchBooks(query) {
   try {
     results.innerHTML = "<p>Loading...</p>";
@@ -46,7 +54,7 @@ async function fetchBooks(query) {
   }
 }
 
-// DISPLAY BOOKS (SAFE VERSION)
+// function to display books
 function displayBooks(books) {
   results.innerHTML = "";
 
@@ -77,11 +85,12 @@ function displayBooks(books) {
       <h5>${title}</h5>
       <p>${author}</p>
 
+       <button class="read-btn">📖 Read</button>
+
       <button class="listen-btn">🔊 Listen</button>
       <button class="save-btn">⭐ Save</button>
     `;
-
-    // EVENTS
+    //events to add audio and save button
     card.querySelector(".listen-btn").onclick = () => {
       speak(title);
     };
@@ -89,12 +98,16 @@ function displayBooks(books) {
     card.querySelector(".save-btn").onclick = () => {
       saveFav({ title, author, cover });
     };
+    card.querySelector(".read-btn").onclick = () => {
+  currentBook = book;   
+  openReadSection();    
+};
 
     results.appendChild(card);
   });
 }
 
-// SPEECH
+// speech function
 function speak(text) {
   if (!text) return;
 
@@ -103,7 +116,7 @@ function speak(text) {
   speechSynthesis.speak(speech);
 }
 
-// SAVE FAVORITES
+// function to save the favourites
 function saveFav(book) {
   let favs = JSON.parse(localStorage.getItem("novels")) || [];
 
@@ -115,8 +128,7 @@ function saveFav(book) {
     localStorage.setItem("novels", JSON.stringify(favs));
   }
 }
-
-// LOAD FAVORITES
+//function load the favourites then it displays
 function loadFavorites() {
   const container = document.getElementById("favorites");
   container.innerHTML = "";
@@ -130,7 +142,7 @@ function loadFavorites() {
 
   favs.forEach((book) => {
     const card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("card3");
 
     const title = book.title || "No title";
     const author = book.author || "Unknown author";
@@ -146,9 +158,35 @@ function loadFavorites() {
   });
 }
 
-// ERROR HANDLER
+//error handling
 function showError(msg) {
   results.innerHTML = "";
   errorDiv.textContent = msg;
   errorDiv.classList.remove("hidden");
+}
+document.body.classList.add("dark-mode");
+
+
+//open readFunction
+function openReadSection() {
+  homeSection.classList.add("hidden");
+  favSection.classList.add("hidden");
+  readSection.classList.remove("hidden");
+
+  if (!currentBook) return;
+
+  document.getElementById("read-title").textContent =
+    currentBook.title;
+
+  document.getElementById("read-author").textContent =
+    currentBook.author_name?.[0] || "Unknown";
+
+  const cover = currentBook.cover_i
+    ? `https://covers.openlibrary.org/b/id/${currentBook.cover_i}-L.jpg`
+    : "images/no-image.png";
+
+  document.getElementById("read-img").src = cover;
+
+  document.getElementById("read-link").href =
+    `https://openlibrary.org${currentBook.key}`;
 }

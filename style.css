@@ -6,7 +6,7 @@
 }
 /* body styling */
 body {
-  background:hsl(0, 36%, 57%);
+  background:whitesmoke;
   font-family: Arial, sans-serif;
   color:white
 }
@@ -22,15 +22,34 @@ display: flex;
   position: sticky;
   top: 0;
 }
+.icon {
+    display: flex;
+    gap:10px
+
+
+}
+.navbar img{
+    width: 30px;
+}
 /* navbar styling */
 .navbar button{
     margin-left: 10px;
   padding: 8px 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
-  background: white
+  background: rgb(135, 87, 87);
+  color:black;
+  width:100px
+
 }
+.navbar h1{
+    font-size: 50px;
+    font-weight: 800;
+    text-align:left;
+    color:rgb(252, 246, 246)
+}
+/* home section */
 #home-section h1 {
   font-weight: 900;
   font-size: 50px;
@@ -156,9 +175,9 @@ padding-left: 20px;
 }
 #results {
   display: flex;
-  flex-wrap: wrap;        /* allows wrapping to next line */
-  gap: 20px;              /* space between cards */
-  justify-content: center; /* center horizontally */
+  flex-wrap: wrap;        
+  gap: 20px;              
+  justify-content: center;
 }
 .card2 {
   width: 200px;
@@ -198,4 +217,77 @@ padding-left: 20px;
   .navbar {
     flex-direction: column;
     gap: 10px;
-  }}  
+  }} 
+#fav-section h2{
+    font-weight:900;
+    font-size:30px;
+    padding-bottom:20px;
+    color:black;
+    padding-top:20px;
+
+}
+
+  
+#favorites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card3{
+  width: 200px;
+  padding: 15px;
+  background:grey;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition:0.2s;
+
+}
+
+ .card3:hover {
+  transform: scale(1.05);
+}
+
+
+.dark-mode {
+  background: #8f8181;
+  transition: background 0.4s ease, color 0.4s ease;
+  color: #ffffff;
+
+}
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+.card,
+.card2 {
+  transition: background 0.4s ease, color 0.4s ease, transform 0.2s ease;
+}
+
+.dark-mode .card,
+.dark-mode .card2 {
+  background: #716363;
+  color: white;
+}
+/* background overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* hidden state */
+.hidden {
+  display: none;
+}
+
