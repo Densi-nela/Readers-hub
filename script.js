@@ -13,7 +13,6 @@ document.getElementById("home-btn").onclick = () => {
   favSection.classList.add("hidden");
 };
 
-
 document.getElementById("fav-btn").onclick = () => {
   homeSection.classList.add("hidden");
   favSection.classList.remove("hidden");
@@ -25,7 +24,6 @@ document.getElementById("read-btn").addEventListener("click", () => {
   favSection.classList.add("hidden");
   readSection.classList.remove("hidden");
 });
-
 
 //adding event listener to the form
 form.addEventListener("submit", (e) => {
@@ -99,9 +97,9 @@ function displayBooks(books) {
       saveFav({ title, author, cover });
     };
     card.querySelector(".read-btn").onclick = () => {
-  currentBook = book;   
-  openReadSection();    
-};
+      currentBook = book;
+      openReadSection();
+    };
 
     results.appendChild(card);
   });
@@ -166,7 +164,6 @@ function showError(msg) {
 }
 document.body.classList.add("dark-mode");
 
-
 //open readFunction
 function openReadSection() {
   homeSection.classList.add("hidden");
@@ -175,8 +172,7 @@ function openReadSection() {
 
   if (!currentBook) return;
 
-  document.getElementById("read-title").textContent =
-    currentBook.title;
+  document.getElementById("read-title").textContent = currentBook.title;
 
   document.getElementById("read-author").textContent =
     currentBook.author_name?.[0] || "Unknown";

@@ -1,102 +1,126 @@
-#  Novel Hub
+# Readers Hub
 
-A modern Netflix-style Single Page Application (SPA) for discovering, saving, and exploring books using the Open Library API.
+A Single Page Application (SPA) for discovering, saving, and exploring books using the Open Library API.
+Readers Hub uses the Open Library API to dynamically fetch book data in real time. Instead of storing books locally, the application retrieves information directly from the API whenever a user performs a search or interacts with the app.
 
----
+It allows the users to search the book and also allows the users to save the book that will be added to the fevorite section and also to view the details of the book that includes the title ,author name of the book and the cover at the read section
 
-##  Overview
+## Overview
 
-Novel Hub is a frontend web application that allows users to:
+Readers Hub is a frontend web application that allows users to explore and interact with books using the Open Library API.
 
-*  Search for books in real time
-*  View detailed book information
-*  Save favorite books
-*  Explore books in a Netflix-style layout
-*  Listen to book titles using text-to-speech
-*
+It provides a smooth, Netflix-inspired browsing experience where users can:
 
----
+- Search for books in real time
+- View detailed book information at the read section
+- Save favorite books
+- Explore books in a Netflix-style layout
+- Listen to book titles using text-to-speech
+- ***
 
 ## Purpose
 
-This app is designed to help users:
+The purpose of Hub is to create a simple, engaging, and interactive platform for discovering books in a modern digital experience.
 
-> Discover new books, organize their reading list, and explore book details — all in a smooth, interactive interface.
+It is designed to:
 
----
+Make book discovery fast and intuitive through realtime search help users build and manage a personal list of fevorite books provide easy access to detailed book information in one place and improve accesssibility by allowing users to listen to book titles using text to speech .It delivers a visually appealing browsing experience
+
+The project focuses on strenghtening a core frontend development skills such as API integration,DOM manipulation and dynamic UI rendering using vanilla javaScript.
 
 ## Features
 
-### Book Search
+### Home section
 
-* Fetches data from Open Library API
-* Displays title, author, and cover
+The Home section is the main entry point of the Readers Hub application and is designed to provide users with an engaging and intuitive book discovery experience.
 
-###  Featured Banner
+It serves as a dynamic dashboard where users can immediately start exploring books without any navigation complexity by using the form and the search button
 
-* Highlights a selected book
-* Dynamic background and actions
+The Home section enables users to:
 
-###  Favorites Section
+Search for books instantly using keywords, titles, or authors
+Receive live search results powered by the Open Library API
+View updated results dynamically as they type, without page reloads
 
-* Save books to localStorage
-* View your personal library
-* Persistent across sessions
+Books are displayed in a visually appealing horizontal scrolling layout, inspired by Netflix:
+
+Rows of book cards are organized for easy browsing
+Each card displays the book cover, title, and author
+
+### Favorites Section
+
+- Save books to localStorage
+  When a user clicks the “save” button on a book the book fetched:
+
+The book’s key details (title, author, cover image, and ID) are stored in the browser’s localStorage
+This ensures the data is saved locally on the user’s device without requiring a backend database
+Data is stored in JSON format for easy retrieval and manipulation
+
+- View your personal library
+  All saved books are displayed in a dedicated Favorites section, where users can:
+
+see their saved collection
+
+This section acts as a personal digital bookshelf.
+
+- Persistent across sessions
+  Because the data is stored in localStorage:
+
+Favorites remain available even after refreshing the page
+Data persists after closing and reopening the browser
+No login or authentication is required
 
 ### Read Section (SPA View)
 
-* Displays selected book details
-* Includes title, author, and cover
+- Displays selected book details after fetching the book
+- Includes title, author, and cover
 
+### Text-to-Speech
 
-###  Text-to-Speech
+- Listen to book titles
 
-* Listen to book titles
+### Responsive Design
 
-
-###  Responsive Design
-
-* Works across different screen sizes
+- Works across different screen sizes
 
 ---
 
-##  How It Works (SPA Architecture)
+## How It Works (SPA Architecture)
 
 This project follows a Single Page Application approach:
 
-* No page reloads
-* Sections are toggled using JavaScript
-* Views include:
-
-  * Home
-  * Favorites
-  * Read
+- No page reloads
+- Sections are toggled using JavaScript
+- Views include:
+  - Home
+  - Favorites
+  - Read
 
 ---
 
 ## Technologies Used
 
-* HTML5
-* CSS3
-* JavaScript (Vanilla JS)
-* Open Library API
+- HTML5 -structure
+- CSS3-styling&responsive design
+- JavaScript (Vanilla JS)-Logic & interactivity
+- Open Library API-Book data
 
 ---
 
-##  API Used
+## API Used
 
 ### Open Library API
 
 Provides book data including:
 
-* Titles
-* Authors
-* Covers
-* Book identifiers
+- Titles
+- Authors
+- Covers
+- Book identifiers
 
 ---
 
-##  Project Structure
+## Project Structure
 
 ```
  project-folder
@@ -109,43 +133,46 @@ Provides book data including:
 
 ---
 
-##  How to Run
+## How to Run
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/novel-hub.git
+git clone git@github.com:Densi-nela/Readers-hub.git:
 ```
 
 2. Open the project folder:
 
 ```bash
-cd novel-hub
+cd Readers Hub
 ```
 
 3. Open `index.html` in your browser
 
 ---
 
-##  Future Improvements
+## Live Demo
 
-*  Full book reading integration (Gutenberg API)
-*  Personalized recommendations
-*  Reading progress tracking
-*  User authentication
-* Deployment (GitHub Pages / Netlify)
+https://densi-nela.github.io/Readers-hub
 
----
+## Future Improvements
 
-##  Notes
-
-* This app does **not host full book content**
-* External reading is handled via Open Library links
-* Some books may not have cover images
+- Full book reading integration (Gutenberg API)
+- Personalized recommendations
+- Reading progress tracking
+- User authentication
 
 ---
 
-##  Author
+## Notes
+
+- This app does **not host full book content**
+- External reading is handled via Open Library links
+- Some books may not have cover images
+
+---
+
+## Author
 
 **Densinela Chepngetich**
 
@@ -153,11 +180,11 @@ cd novel-hub
 
 ## Acknowledgements
 
-* Open Library API for free book data
-* Inspiration from Netflix UI design
+- Open Library API for free book data
+- Inspiration from Netflix UI design
 
 ---
 
-##  Status
+## Status
 
- In active development — continuously improving features and UI
+In active development — continuously improving features and UI
